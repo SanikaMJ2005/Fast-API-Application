@@ -23,7 +23,8 @@ class studentResponse(BaseModel):
 def read_root():
     return {"Hello": "World"}
 
-def create_student(student: Student):
+def create_student(student: Student)->StudentResponse:
+    student.id = student_id["current"]    
     return student
 
 def read_student(id:int):
